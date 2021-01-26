@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Sao_Paulo',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Modified Providers
+         */
+        App\Architecture\Bookings\Providers\BookingsAppServiceProvider::class,
+        App\Architecture\Cars\Providers\CarsAppServiceProvider::class,
+        App\Architecture\Users\Providers\UsersAppServiceProvider::class,
     ],
 
     /*
@@ -226,7 +232,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
     ],
 
 ];

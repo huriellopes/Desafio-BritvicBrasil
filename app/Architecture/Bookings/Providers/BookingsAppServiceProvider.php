@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Providers;
+namespace App\Architecture\Bookings\Providers;
 
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class BookingsAppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -24,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Validator::extend('validaEmail', 'App\Rules\Email@valida', 'O e-mail informado não é válido!.');
+        //
     }
 }
