@@ -174,13 +174,16 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
 
         /**
          * Modified Providers
          */
         App\Architecture\Bookings\Providers\BookingsAppServiceProvider::class,
+        App\Architecture\Bookings\Providers\BookingsEventServiceProvider::class,
         App\Architecture\Cars\Providers\CarsAppServiceProvider::class,
-        App\Architecture\Users\Providers\UsersAppServiceProvider::class,
+        App\Architecture\Clients\Providers\ClientsAppServiceProvider::class,
     ],
 
     /*

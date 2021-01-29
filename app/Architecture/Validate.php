@@ -36,7 +36,7 @@ class Validate
      * @return bool
      * @throws SystemException
      */
-    public function validateInt(int $id)
+    public function validateInt(int $id): bool
     {
         if (!is_int($id)) {
             throw new SystemException('Erro ao validar inteiro.');

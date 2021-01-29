@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use Carbon\Carbon;
+use stdClass;
 
 trait Utils
 {
@@ -126,5 +127,20 @@ trait Utils
         }
 
         return $valor;
+    }
+
+    /**
+     * @param $request
+     * @return string
+     */
+    public function logReserved(stdClass $params)
+    {
+        $log = '[Reserva de Carro: Carro reservado]'.PHP_EOL;
+        $log .= 'Dados do request: '.json_encode($params).PHP_EOL;
+        $log .= 'Situação: O request foi realizado com sucesso.'.PHP_EOL;
+        $log .= '------------------------------------------------------------------------------------';
+        $log .= PHP_EOL;
+
+        return $log;
     }
 }
