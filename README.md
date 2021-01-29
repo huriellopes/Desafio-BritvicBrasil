@@ -22,6 +22,10 @@
 - Tokenizer PHP Extension
 - XML PHP Extension
 
+## Modelagem do Banco de Dados
+
+![modeling](.gitImage/modelagem.png)
+
 ## ⚡ Mão na massa:
 
 > Você pode realizar o clone deste repositório ou baixar o arquivo .zip!
