@@ -48,12 +48,13 @@ class BookingsController extends Controller
      * @return JsonResponse
      * @throws Throwable
      */
-    public function store(BookingsRequest $request)
+    public function store(BookingsRequest $request): JsonResponse
     {
         try {
             DB::beginTransaction();
                 $params = new stdClass();
-//                $params-> = $this->limpa_tags($request->input(''));
+                $params->client_id = $this->limpa_tags($request->input('client_id'));
+                $params->car_id = $this->limpa_tags($request->input('car_id'));
 
                 $this->IBookingService->storeBookings($params);
             DB::commit();
@@ -67,29 +68,6 @@ class BookingsController extends Controller
 
     /**
      * @param Booking $booking
-     * @param BookingsRequest $request
-     * @return JsonResponse
-     * @throws Throwable
-     */
-    public function update(Booking $booking, BookingsRequest $request) : JsonResponse
-    {
-        try {
-            DB::beginTransaction();
-                $params = new stdClass();
-//                $params-> = $this->limpa_tags($request->input(''));
-
-                $this->ICarsService->updateBookings($booking, $params);
-            DB::commit();
-
-            return $this->returnResponse(BookingsEnum::UPDATED, StatusEnum::OK);
-        } catch (Exception $err) {
-            DB::rollBack();
-            $this->shootExeception($err, BookingsEnum::NOT_UPDATED);
-        }
-    }
-
-    /**
-     * @param Booking $booking
      * @return JsonResponse
      * @throws Throwable
      */
@@ -97,7 +75,7 @@ class BookingsController extends Controller
     {
         try {
             DB::beginTransaction();
-                $this->ICarsService->deleteBookings($booking);
+                $this->IBookingService->deleteBooking($booking);
             DB::commit();
 
             return $this->returnResponse(BookingsEnum::DELETE, StatusEnum::OK);
