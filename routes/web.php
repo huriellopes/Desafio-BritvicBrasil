@@ -28,19 +28,19 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
     Route::prefix('/clients')->group(function () {
         Route::get('/', [ClientsController::class, 'index'])->name('dash/clients/index');
         Route::get('/create', [ClientsController::class, 'create'])->name('dash/clients/create');
-        Route::get('/show', [ClientsController::class, 'show'])->name('dash/clients/show');
+        Route::get('/show/{client}', [ClientsController::class, 'show'])->name('dash/clients/show');
     });
 
     Route::prefix('/cars')->group(function () {
         Route::get('/', [CarsController::class, 'index'])->name('dash/clients/index');
         Route::get('/create', [CarsController::class, 'create'])->name('dash/clients/create');
-        Route::get('/show', [CarsController::class, 'show'])->name('dash/clients/show');
+        Route::get('/show/{car}', [CarsController::class, 'show'])->name('dash/clients/show');
     });
 
     Route::prefix('/bookings')->group(function () {
         Route::get('/', [BookingsController::class, 'index'])->name('dash/bookings/index');
         Route::get('/create', [BookingsController::class, 'create'])->name('dash/bookings/create');
-        Route::get('/show', [BookingsController::class, 'show'])->name('dash/bookings/show');
+        Route::get('/show/{booking}', [BookingsController::class, 'show'])->name('dash/bookings/show');
     });
 
     Route::prefix('api')->group(function () {

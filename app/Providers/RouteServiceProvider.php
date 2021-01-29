@@ -52,6 +52,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::pattern('user', '[0-9]+');
         Route::pattern('booking', '[0-9]+');
         Route::pattern('car', '[0-9]+');
+        Route::pattern('client', '[0-9]+');
         Route::pattern('string', '[A-Za-z]+');
     }
 
